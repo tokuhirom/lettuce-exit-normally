@@ -7,7 +7,7 @@ lettuce-600/build.gradle: lettuce-534/build.gradle
 	cp $< $@
 	perl -i -pe 's/io.lettuce:lettuce-core:5.3.4.RELEASE/io.lettuce:lettuce-core:6.0.0.RELEASE/g' $@
 
-test: test-534 test-600
+test: all test-534 test-600
 
 test-534:
 	./gradlew :lettuce-534:shadowJar
@@ -17,4 +17,4 @@ test-600:
 	./gradlew :lettuce-600:shadowJar
 	java -jar lettuce-600/build/libs/lettuce-600-1.0-SNAPSHOT-all.jar
 
-.PHONY: test test-534 test-600
+.PHONY: all test test-534 test-600

@@ -22,8 +22,6 @@ public class Application {
                 DefaultClientResources.builder()
                                       .build();
 
-        printVersion(RedisClient.class);
-
         final List<RedisURI> redisUris = Stream.of(7000, 7001, 7003)
                                                .map(port -> RedisURI.create("127.0.0.1", port))
                                                .collect(Collectors.toList());
@@ -50,14 +48,5 @@ public class Application {
                 System.out.println(threadInfo);
             }
         }
-    }
-
-    public static void printVersion(Class<?> clazz) {
-        Package p = clazz.getPackage();
-        System.out.printf("%n%n%s%n  Title: %s%n  Version: %s%n  Vendor: %s%n%n%n",
-                          clazz.getName(),
-                          p.getImplementationTitle(),
-                          p.getImplementationVersion(),
-                          p.getImplementationVendor());
     }
 }

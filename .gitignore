@@ -1,4 +1,5 @@
 /build
+/*/build/
 
 /lettuce-600/build.gradle
 /lettuce-600/src/main/java/com/example/Application.java
