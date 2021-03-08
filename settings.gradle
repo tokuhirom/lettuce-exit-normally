@@ -1,0 +1,4 @@
+rootProject.name = 'lettucePingBeforeActiveConnectionTrue'
+
+include 'lettuce-534'
+include 'lettuce-600'
