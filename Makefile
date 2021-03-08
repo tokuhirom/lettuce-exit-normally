@@ -18,4 +18,3 @@ test-600:
 	java -jar lettuce-600/build/libs/lettuce-600-1.0-SNAPSHOT-all.jar
 
 .PHONY: test test-534 test-600
-:wq
