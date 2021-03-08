@@ -23,7 +23,7 @@ jobs:
     - name: Install deps
       run: sudo apt-get install -y docker
     - name: Run redis cluster in background
-      run: docker run -d -e "IP=0.0.0.0" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
+      run: sudo docker run -d -e "IP=0.0.0.0" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
     - name: Wait docker process
       run: sleep 30
     - name: Grant execute permission for gradlew
