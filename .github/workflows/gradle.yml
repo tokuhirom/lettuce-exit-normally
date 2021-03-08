@@ -38,3 +38,4 @@ jobs:
           make
     - name: make test
       run: make test
+      timeout-minutes: 3
