@@ -27,12 +27,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install docker-ce docker-ce-cli containerd.io
     - name: Run redis cluster in background
-      run: ls /usr/bin/docker /usr/sbin/docker
-    - name: Run redis cluster in background
       run: sudo docker run -d -e "IP=0.0.0.0" -p 7000-7005:7000-7005 grokzen/redis-cluster:latest
     - name: Wait docker process
       run: sleep 30
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
+    - name: make
+      run: make
+    - name: make test
+      run: make test
