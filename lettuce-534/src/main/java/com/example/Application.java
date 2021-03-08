@@ -30,6 +30,7 @@ public class Application {
                 clientResources, redisUris
         );
         Builder builder = ClusterClientOptions.builder();
+        builder.pingBeforeActivateConnection(true);
         ClusterClientOptions clientOptions = builder.build();
 
         redisClusterClient.setOptions(clientOptions);
@@ -37,6 +38,7 @@ public class Application {
         StatefulRedisClusterConnection<String, String> connection = redisClusterClient.connect();
         connection.close();
 
+        clientResources.shutdown();
         redisClusterClient.shutdown();
 
         System.out.println("DONE");
